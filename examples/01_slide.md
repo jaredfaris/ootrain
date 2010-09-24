@@ -1,13 +1,10 @@
 !SLIDE 
-# My Presentation #
+# Examples #
 
-!SLIDE Readability
-!SLIDE Size and complexity
-!SLIDE Doing one thing well
-!SLIDE Commenting Complexity
-!SLIDE Clean up after yourself
-# We are not your mom #
-
-* first point
-* second point
-* third point
+* Testing - Hard to debug
+* Testing - Regressions
+* Testing - DI/Mocking
+* Testing - Fixing Spagetti Code
+* Commenting Complexity - nice lambda example
+* Readability - Inline vs. Method refactorying; xml comments
+* Isolation - testing with/without mocking
