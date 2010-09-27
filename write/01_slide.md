@@ -14,6 +14,27 @@
   -- ?: condition operator, do not chain, ?? null collas..
   -- etc
 
+
+
+!SLIDE center
+# Crazy LINQ Chaining Mania #
+
+<img src="crazy_linq_chaining.png" width="100%" alt="Ugh" />
+
+Insane in da membrain
+
+(Crazy insane, got no brain)
+
+<span style="font-size: .7em;">Yes it's a Cyprus Hill reference. No we aren't sorry.</span>
+
+
+
+
+!SLIDE center
+# Cleaner LINQ #
+
+![Readable](readable_linq_chaining.png)
+
 !SLIDE 
 # Size and complexity #
 
