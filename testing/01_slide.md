@@ -1,15 +1,77 @@
-!SLIDE 
+!SLIDE bullets 
 # Why do we test #
 
-Because we mess shit up
-
 * Promotes writing better code from the start
-* catch regressions, esp. edge cases
-* provides confidence that new features are non-destructive
+* Easily catch regressions and edge case concerns
 * "Will this refactoring breaking something"
-* increases quality of delivered product
+* Increases quality of delivered product
 
-!SLIDE
+!SLIDE bullets
+# Testing for better code #
+
+* Testing aspects of the code, in isolation, increase confidence that the
+things will perform as expected and met the requirements. 
+* Write tests before hand matching the stated requirements 
+* <span style='color: red'>Red</span> &#8594;
+<span style='color: green'>Green</span> &#8594; Refactor
+
+!SLIDE smbullets
+# Magnum.TestFramework Attributes #
+
+* `[TestFixture]` &#8594; `[Scenario]` 
+* `[TestFixtureSetup]` &#8594; `[Given]`
+* `[TestFixtureSetUp]` &#8594; `[When]`
+* `[Test]` &#8594; `[Then]`
+* `[TestFixtureTearDown]` &#8594; `[After]`
+* `[TestFixtureTearDown]` &#8594; `[Finally]`
+
+* `[Category("Database")]` &#8594; `[Database]`
+* `[Category("Slow")]` &#8594; `[Slow]`
+* `[Category("Integration")]` &#8594; `[Integration]`
+* `[Category("NotWorking")]` &#8594; `[NotWorking]`
+
+* `[Explicit("Not Yet Implemented")]` &#8594; `[NotYetImplemented]`
+
+!SLIDE smbullets
+# Magnum.TestFramework Assertions (Extentions) #
+
+* `ShouldBeTrue()`
+* `ShouldBeFalse()`
+* `ShouldBeEmpty<T>(ICollection<T>)`
+* `ShouldNotBeEmpty<T>(ICollection<T>)`
+* `ShouldBeEqual<T>(T obj)`
+* etc
+* All extention methods, should be discoverable if the namespace is added
+
+!SLIDE code
+    @@@csharp
+    [Scenario]
+    public class Future_orders_should_be_invalid
+    {
+      Order _order;
+      
+      [Given]
+      public void An_order_with_a_future_date()
+      {
+        _order = new Order();
+        _order.OrderDate = 
+          DateTime.Now.AddDays(3);
+      }
+    
+      [Then]
+      public void Should_return_invalid()
+      {
+        _order.IsValid.ShouldBeFalse();
+      }
+    }
+!SLIDE bullets
+# More Testing #
+
+* Tests that are just plain unit tests can still use NUnit attributes
+* Also, many defects can be just normal tests
+* This provides value for behaviors, used when testing is driving development
+
+!SLIDE bullets
 
 # Why TDD #
 
@@ -21,7 +83,7 @@ Because we mess shit up
 * prevents overdevelopment
 * promotes good OO
 
-!SLIDE
+!SLIDE bullets
 
 # Mocking & Isolation #
 
@@ -31,14 +93,14 @@ Because we mess shit up
 * Mocking allows the unit of code under test to not have to worry about other units it interacts with
 * Mocking simplifies and speeds up test writing
 
-!SLIDE
+!SLIDE bullets
 # Test Types #
 
 * Integration: Testing the interaction of code vs something external (db, external web services, etc)
-  - NHibernate map tests are a type of integration test
+* NHibernate map tests are a type of integration test
 * Unit: Tests a single unit of code (a single method in a class)
 
-!SLIDE
+!SLIDE bullets
 # How I learned to quit worrying and love CI #
 
 * We should be running full test suites localy
@@ -47,7 +109,7 @@ Because we mess shit up
 * Better than waiting until someone does a build/release before QA or production release
 * public humliation encouages faster repair from a broken state
 
-!SLIDE
+!SLIDE bullets
 # Code Coverage #
 
 * CI provides coverage reports
