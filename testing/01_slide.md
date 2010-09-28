@@ -52,8 +52,7 @@ things will perform as expected and met the requirements.
       public void An_order_with_a_future_date()
       {
         _order = new Order();
-        _order.OrderDate = 
-          DateTime.Now.AddDays(3);
+        _order.OrderDate = DateTime.Now.AddDays(3);
       }
     
       [Then]
