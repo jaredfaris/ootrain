@@ -19,11 +19,9 @@ things will perform as expected and met the requirements.
 # Magnum.TestFramework Attributes #
 
 * `[TestFixture]` &#8594; `[Scenario]` 
-* `[TestFixtureSetup]` &#8594; `[Given]`
-* `[TestFixtureSetUp]` &#8594; `[When]`
+* `[TestFixtureSetup]` &#8594; `[Given]`, `[When]`
 * `[Test]` &#8594; `[Then]`
-* `[TestFixtureTearDown]` &#8594; `[After]`
-* `[TestFixtureTearDown]` &#8594; `[Finally]`
+* `[TestFixtureTearDown]` &#8594; `[After]`, `[Finally]`
 
 * `[Category("Database")]` &#8594; `[Database]`
 * `[Category("Slow")]` &#8594; `[Slow]`
@@ -43,7 +41,7 @@ things will perform as expected and met the requirements.
 * etc
 * All extention methods, should be discoverable if the namespace is added
 
-!SLIDE code
+!SLIDE code smaller
     @@@csharp
     [Scenario]
     public class Future_orders_should_be_invalid
@@ -64,6 +62,7 @@ things will perform as expected and met the requirements.
         _order.IsValid.ShouldBeFalse();
       }
     }
+
 !SLIDE bullets
 # More Testing #
 
@@ -75,13 +74,12 @@ things will perform as expected and met the requirements.
 
 # Why TDD #
 
-* It's a buzzword, duh
-* Demonstrates understand of requirements from the start
+* Forces understanding of requirements the start
 * Includes test coverage from the start
-* reduces false positives
+* Reduces false positives
 * Allows easily refactoring
-* prevents overdevelopment
-* promotes good OO
+* Prevents overdevelopment
+* Promotes good OO
 
 !SLIDE bullets
 
