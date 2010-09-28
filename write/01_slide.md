@@ -1,24 +1,26 @@
 !SLIDE 
-# My Presentation #
+# Back To Basics #
+### Examples using LINQPad ###
 
 !SLIDE 
 # Readability #
 
-* Guide Lines - conventions not contracts
 * Naming - variables, methods, classes
 * Resharper is pretty much our style cop
 * Break up long sets of logic into descriptive parts
  -- examples
-  -- LINQ stuff
   -- long code chains into method with reason names
-  -- ?: condition operator, do not chain, ?? null collas..
   -- etc
 
+
+!SLIDE center smbullets
+# Guidelines, Not Laws #
+* Life is easier if we are all on the same page.
+* This is not a one-size-fits-all approach.
 
 
 !SLIDE center
 # Crazy LINQ Chaining Mania #
-
 <img src="crazy_linq_chaining.png" width="100%" alt="Ugh" />
 
 Insane in da membrain
@@ -28,12 +30,34 @@ Insane in da membrain
 <span style="font-size: .7em;">Yes it's a Cyprus Hill reference. No we aren't sorry.</span>
 
 
-
-
 !SLIDE center
 # Cleaner LINQ #
 
 ![Readable](readable_linq_chaining.png)
+
+
+!SLIDE center smbullets
+## Clever Is Not The Same As Good ##
+* Clever solutions to difficult problems are good.
+* Clever code to simple problems is bad.  Readability and maintainability are more important than you saving 10 keystrokes.
+* If you want to use new technology (and you do), SHARE IT with the team.
+
+!SLIDE center
+## Clever And Not Good ##
+* We don't write Perl for a reason.  We don't abuse ? and ?? for the same reason.
+<br />
+![? ??](nasty_question_marks.png)
+
+<span style="font-size: .7em;">We are aware that not all Perl is hideous.  In theory.</span>
+
+!SLIDE center
+## Clever And Not Good ##
+* Previous values
+
+result = 2
+
+result2 = "50"
+
 
 !SLIDE 
 # Size and complexity #
