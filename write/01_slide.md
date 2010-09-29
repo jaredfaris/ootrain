@@ -154,13 +154,11 @@
 
 *Not all Perl is hideous.  In theory.
 
-!SLIDE code smaller
+!SLIDE smaller smbullets
 ## Clever And Not Good ##
 * Previous values
-
-result = 2
-
-result2 = "50"
+* result = 2
+* result2 = "50"
 
 
 !SLIDE smaller smbullets
@@ -174,7 +172,7 @@ result2 = "50"
   - add submethod calls that have meaningful names
 * if you have to use "and" to describe what a method of class does, split it (i.e. x and y and z) -- move into doing one thing well
 
-!SLIDE 
+!SLIDE smaller smbullets
 # Commenting Complexity #
 
 * Empty xml comments are worse than no comments
