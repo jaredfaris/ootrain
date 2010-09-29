@@ -1,6 +1,5 @@
 !SLIDE 
 # Dev Refresher #
-### Examples using LINQPad ###
 
 
 !SLIDE
@@ -10,7 +9,7 @@
 * Mention statelessness and DI
 
 
-!SLIDE 
+!SLIDE small
 # Readability #
 
 
@@ -78,52 +77,91 @@
 
     ...
 
-!SLIDE center smbullets
+!SLIDE center smbullets smaller
 
 # Guidelines, Not Laws #
 * Life is easier if we are all on the same page.
 * This is not a one-size-fits-all approach.
 
-!SLIDE center
+!SLIDE code smaller 
 # Crazy LINQ Chaining Mania #
-<img src="crazy_linq_chaining.png" width="100%" alt="Ugh" />
 
-Insane in da membrain
+    @@@csharp
+    void Main()
+    {
+      var cart = CreateTestCart();
+      
+      // This isn't easily readable.  It contains some weird logic 
+      // which may not make sense even in context. 
+      //Oh and look, magic strings and magic numbers. Joy
+      var output = cart.Items.Where(x => x.UnitPrice > 2.00m && x.Name != "Stuff" 
+        && x.UnitPrice < 99m).OrderByDescending(x => x.Id).Take(3)
+        .Select(x => x.UnitPrice);
+    }
 
-(Crazy insane, got no brain)
+<div style="text-align: center; font-size: 1.4em;">
+  Insane in da membrain
+  (Crazy insane, got no brain)
+</div>
 
-<span style="font-size: .7em;">Yes it's a Cyprus Hill reference. No we aren't sorry.</span>
-
-!SLIDE center
+!SLIDE code smaller 
 # Cleaner LINQ #
 
-![Readable](readable_linq_chaining.png)
+    @@@csharp
+    void Main()
+    {
+      LoadConfiguredValues(); // Don't embed values.  No recompiles!
+      
+      var cart = CreateTestCart();
+      
+      // It's pretty obvious what each distinct unit of this chain
+      // is doing. We can even easily comment anything that's tricky
+      var output = cart.Items
+        .Where(x => x.UnitPrice > lowerLimit) 
+        .Where(x => x.UnitPrice < upperLimit) 
+        .Where(x => x.Name != bannedName) // No more magic strings!
+        .OrderByDescending(y => y.Id)
+        .Take(3) // Limit for some business reason?  Maybe explain
+        .Select(z => z.UnitPrice);
+    }
 
-
-!SLIDE center smbullets
-## Clever Is Not The Same As Good ##
+!SLIDE center smbullets smaller
+# Clever Is Not The Same As Good #
 * Clever solutions to difficult problems are good.
 * Clever code to simple problems is bad.  Readability and maintainability are more important than you saving 10 keystrokes.
 * If you want to use new technology (and you do), SHARE IT with the team.
 
-!SLIDE center
-## Clever And Not Good ##
-* We don't write Perl for a reason.  We don't abuse ? and ?? for the same reason.
-<br />
-![? ??](nasty_question_marks.png)
+!SLIDE code smaller 
+# Clever And Not Good #
+###We don't write Perl for a reason*.  We don't abuse ? and ?? for the same reason.###
 
-<span style="font-size: .7em;">We are aware that not all Perl is hideous.  In theory.</span>
+    @@@csharp
+    // Try to quickly figure out what these two results are
+    void Main()
+    {
+      var w = "Test1";
+      var x = 100;
+      var y = 50;
+      var z = "50";
+      
+      // This will result in defenestration
+      var result = (x > y) ? (x.ToString() == z) ? 1 : 2 : 3;
+      
+      // This will result in worse
+      var result2 = (x > y) ? (x.ToString() == z) 
+        ? 1.ToString() : z ?? w : 3.ToString();
+    }
 
-!SLIDE center
+*Not all Perl is hideous.  In theory.
+
+!SLIDE smaller smbullets
 ## Clever And Not Good ##
 * Previous values
-
-result = 2
-
-result2 = "50"
+* result = 2
+* result2 = "50"
 
 
-!SLIDE 
+!SLIDE smaller smbullets
 # Size and complexity #
 
 * if doesn't fit on your screen completely, it's too long
@@ -134,7 +172,7 @@ result2 = "50"
   - add submethod calls that have meaningful names
 * if you have to use "and" to describe what a method of class does, split it (i.e. x and y and z) -- move into doing one thing well
 
-!SLIDE 
+!SLIDE smaller smbullets
 # Commenting Complexity #
 
 * Empty xml comments are worse than no comments
