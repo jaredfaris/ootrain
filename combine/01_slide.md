@@ -1,4 +1,4 @@
-!SLIDE 
+!SLIDE bullets
 # Separation of concerns #
 
 * Descriptions shouldn't have "and"
@@ -6,14 +6,42 @@
 * Side effects means break things apart
 * If testing isn't obvious, often too much is happening
 
-!SLIDE
+!SLIDE bullets
 # Spaghetti code #
 
 * Side effects!
 * Testing isn't obvious
 * A sympton of lack of separation of concerns
 
-!SLIDE 
+!SLIDE code
+# Bad Stuff #
+    @@@csharp
+    public void Process(Order order)
+    {
+      // retrieve stuff from db
+      
+      // apply some buiness rule to order
+
+      // retrieve more stuff from db
+
+      // mash it all together
+
+      // apply more business rules
+    }
+
+!SLIDE code
+# Better stuff #
+    @@@csharp
+    public void Process(Order order)
+    {
+      var stuff1 = _stuff1DataService.Get();
+      _rulesService.Apply(order, stuff1);
+
+      var stuff2 = _stuff2DataService.Get();
+      _mashupService.Mash(order, stuff2);
+    }
+
+!SLIDE bullets
 # Class Types #
 
 * Last word(s) in the class name should describe it
@@ -24,13 +52,13 @@
 * Provider: factory classes
 * entities, who should not contain any real business logic, just property bags, do not need a descriptor
 
-!SLIDE
+!SLIDE bullets
 # State #
 * Only entities should really contain state
 * Services, DataServices, etc are stateless, 
 they might ask for state but do not retain it
 
-!SLIDE 
+!SLIDE bullets
 # Interfaces #
 
 * Interfaces are contracts, we assume using them that we are working with black boxes
