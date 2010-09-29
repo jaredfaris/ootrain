@@ -3,6 +3,7 @@
   "sections": [ 
     { "section" : "title" },
     { "section" : "todo" },
+    { "section" : "process" },
     { "section" : "write" },
     { "section" : "combine" },
     { "section" : "testing" },
