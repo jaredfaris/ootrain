@@ -24,6 +24,12 @@
 * Provider: factory classes
 * entities, who should not contain any real business logic, just property bags, do not need a descriptor
 
+!SLIDE
+# State #
+* Only entities should really contain state
+* Services, DataServices, etc are stateless, 
+they might ask for state but do not retain it
+
 !SLIDE 
 # Interfaces #
 
