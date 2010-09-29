@@ -14,10 +14,10 @@
 !SLIDE smaller smbullets
 # Ideally What We Do Now #
 * Get requirements
-* Turn requirements into failing unit tests
+* Turn requirements into failing unit tests <span style="color: #FF0000;">(RED)</span>
 * Write better code with less effort
-* Unit tests pass
-* Refactor code
+* Pass unit tests <span style="color: #00FF00;">(GREEN)</span>
+* Refactor code <span style="color: #0000FF;">(REFACTOR)</span>
 * Manually check everything and commit
 * Send code to QA
 
