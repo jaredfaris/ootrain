@@ -9,7 +9,7 @@
 * Mention statelessness and DI
 
 
-!SLIDE 
+!SLIDE small
 # Readability #
 
 
@@ -69,7 +69,7 @@
 
 
 
-!SLIDE center smbullets
+!SLIDE center smbullets smaller
 
 # Guidelines, Not Laws #
 * Life is easier if we are all on the same page.
@@ -117,21 +117,36 @@
         .Select(z => z.UnitPrice);
     }
 
-!SLIDE center smbullets
-## Clever Is Not The Same As Good ##
+!SLIDE center smbullets smaller
+# Clever Is Not The Same As Good #
 * Clever solutions to difficult problems are good.
 * Clever code to simple problems is bad.  Readability and maintainability are more important than you saving 10 keystrokes.
 * If you want to use new technology (and you do), SHARE IT with the team.
 
-!SLIDE center
-## Clever And Not Good ##
-* We don't write Perl for a reason.  We don't abuse ? and ?? for the same reason.
-<br />
-![? ??](nasty_question_marks.png)
+!SLIDE code smaller 
+# Clever And Not Good #
+###We don't write Perl for a reason*.  We don't abuse ? and ?? for the same reason.###
 
-<span style="font-size: .7em;">We are aware that not all Perl is hideous.  In theory.</span>
+    @@@csharp
+    // Try to quickly figure out what these two results are
+    void Main()
+    {
+      var w = "Test1";
+      var x = 100;
+      var y = 50;
+      var z = "50";
+      
+      // This will result in defenestration
+      var result = (x > y) ? (x.ToString() == z) ? 1 : 2 : 3;
+      
+      // This will result in worse
+      var result2 = (x > y) ? (x.ToString() == z) 
+        ? 1.ToString() : z ?? w : 3.ToString();
+    }
 
-!SLIDE center
+*Not all Perl is hideous.  In theory.
+
+!SLIDE code smaller
 ## Clever And Not Good ##
 * Previous values
 
@@ -140,7 +155,7 @@ result = 2
 result2 = "50"
 
 
-!SLIDE 
+!SLIDE smaller smbullets
 # Size and complexity #
 
 * if doesn't fit on your screen completely, it's too long
