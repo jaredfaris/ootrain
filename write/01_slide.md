@@ -1,5 +1,6 @@
 !SLIDE 
 # Dev Refresher #
+### Examples using LINQPad ###
 
 
 !SLIDE
@@ -67,7 +68,15 @@
         FinishProcessingOrder(order, config);
     }
 
+    private void LoadConfiguration()
+    {
+      return new OrderProcessingConfig
+        {
+          MinOrderValue = ...
+        };
+    }
 
+    ...
 
 !SLIDE center smbullets smaller
 
