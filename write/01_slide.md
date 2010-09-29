@@ -1,6 +1,5 @@
 !SLIDE 
 # Dev Refresher #
-### Examples using LINQPad ###
 
 
 !SLIDE
