@@ -44,21 +44,60 @@ things will perform as expected and met the requirements.
 !SLIDE code smaller
     @@@csharp
     [Scenario]
-    public class Future_orders_should_be_invalid
+    public class Order_Test
     {
-      Order _order;
-      
       [Given]
-      public void An_order_with_a_future_date()
+      public void An_order()
       {
-        _order = new Order();
-        _order.OrderDate = DateTime.Now.AddDays(3);
+        Order = new Order();
+      }
+
+      public Order Order { get; set; }
+    }
+
+    [Scenario]
+    public class Future_orders_should_be_invalid :
+      Order_Test
+    {
+      [When]
+      public void A_future_date_is_given()
+      {
+        Order.OrderDate = DateTime.Now.AddDays(3);
       }
     
       [Then]
-      public void Should_return_invalid()
+      public void Should_be_invalid()
       {
-        _order.IsValid.ShouldBeFalse();
+        Order.IsValid.ShouldBeFalse();
+      }
+    }
+
+!SLIDE
+# Add a new requirement to the statement #
+
+!SLIDE code smaller
+    @@@csharp
+    [Scenario]
+    public class Future_orders_should_be_invalid :
+      Order_Test
+    {
+      [When]
+      public void A_future_date_is_given()
+      {
+        Order.OrderDate = DateTime.Now.AddDays(3);
+      }
+    
+      [Then]
+      public void Should_be_invalid()
+      {
+        Order.IsValid.ShouldBeFalse();
+      }
+
+      [Then]
+      public void Should_have_message()
+      {
+        Order.ValidMessages
+          .ShouldContain("Order Date is in the future.");
       }
     }
 

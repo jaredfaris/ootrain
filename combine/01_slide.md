@@ -48,6 +48,10 @@
 * DataService: accesses data, often the db, VisitDataService, Dao isn't as descrive
 * Service: provides business logic functionality to entities, often with the help of other services, helpers, and/or data services
 * Extentions: provides extention methods to some type(s) of objects - i.e. StringExtentions
+
+!SLIDE bullets
+# Class Types #
+
 * Controller: only used in the MVC framework, avoid uses elsewhere
 * Provider: factory classes
 * entities, who should not contain any real business logic, just property bags, do not need a descriptor
