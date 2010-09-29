@@ -35,7 +35,8 @@
     @@@csharp
     public void ProcessOrder(Order order)
     {
-      double minOrderValue = Convert.ToDouble(ConfigurationManager.AppSettings["MinOrderValue"]);
+      double minOrderValue = Convert.ToDouble(
+        ConfigurationManager.AppSettings["MinOrderValue"]);
 
       ... 
 
@@ -50,6 +51,7 @@
     }
 
 !SLIDE code smaller
+# Into something better #
     @@@csharp
     public void ProcessOrder(Order order)
     {
@@ -61,7 +63,15 @@
         FinishProcessingOrder(order, config);
     }
 
+    private void LoadConfiguration()
+    {
+      return new OrderProcessingConfig
+        {
+          MinOrderValue = ...
+        };
+    }
 
+    ...
 
 !SLIDE center smbullets
 # Guidelines, Not Laws #
