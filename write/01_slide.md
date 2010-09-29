@@ -1,21 +1,9 @@
-!SLIDE 
-# Dev Refresher #
-
-
-!SLIDE
-# TODO #
-* Break up long sets of logic into descriptive parts
-* Mention nhibernate vs sql + sp.  Mention sql in nhibernate
-* Mention statelessness and DI
-
-
 !SLIDE small
-# Readability #
+# Readability And Maintainability #
 
 
 !SLIDE code smaller
 # Naming #
-
     @@@csharp
     // We seem to have standardized on ReSharper's naming
 
@@ -75,15 +63,16 @@
         };
     }
     ...
-!SLIDE center smbullets smaller
 
+
+!SLIDE center smbullets smaller
 # Guidelines, Not Laws #
 * Life is easier if we are all on the same page.
 * This is not a one-size-fits-all approach.
 
+
 !SLIDE code smaller 
 # Crazy LINQ Chaining Mania #
-
     @@@csharp
     void Main()
     {
@@ -96,15 +85,14 @@
         && x.UnitPrice < 99m).OrderByDescending(x => x.Id).Take(3)
         .Select(x => x.UnitPrice);
     }
-
 <div style="text-align: center; font-size: 1.4em;">
   Insane in da membrain
   (Crazy insane, got no brain)
 </div>
 
+
 !SLIDE code smaller 
 # Cleaner LINQ #
-
     @@@csharp
     void Main()
     {
@@ -123,16 +111,17 @@
         .Select(z => z.UnitPrice);
     }
 
+
 !SLIDE center smbullets smaller
 # Clever Is Not The Same As Good #
 * Clever solutions to difficult problems are good.
 * Clever code for its own sake is bad.  Readability and maintainability are more important than you saving 10 keystrokes.
 * If you want to use new technology (and you do), SHARE IT with the team.
 
+
 !SLIDE code smaller 
 # Clever And Not Good #
 ###We don't write Perl for a reason*.  We don't abuse ? and ?? for the same reason.###
-
     @@@csharp
     // Try to quickly figure out what these two results are
     void Main()
@@ -149,8 +138,8 @@
       var result2 = (x > y) ? (x.ToString() == z) 
         ? 1.ToString() : z ?? w : 3.ToString();
     }
-
 *Not all Perl is hideous.  In theory.
+
 
 !SLIDE smaller smbullets
 # Clever And Not Good #
@@ -161,7 +150,6 @@
 
 !SLIDE smaller smbullets
 # Size And Complexity #
-
 * If a method doesn't fit on your screen completely, it's too long.
 * If it's so complex that it needs to be tested seperatly, it should be an seperate class.
 * High cyclomatic complexity is a sign you should refactor. 
@@ -169,43 +157,37 @@
 
 !SLIDE smaller smbullets
 # Complexity Rule Of Thumb #
-
 * You should be able to describe the responsibility of a class in one sentence without a conjunction.
 * Bad:  This class is responsible for loading a user's data and displaying a user access report .
 * Good:  This class is responsible for loading a user's data.  This other class is responsible for displaying a user access report.
-
-<br />
-<br />
-<br />
+<br /><br /><br />
 * You should be able to describe the action a method performs without a conjunction.
 * Bad:  This method verifies the user's password, and loads her profile.
 * Good:  This method verifies the user's password.  This method loads the user's profile.
 
+
 !SLIDE smaller smbullets
 # Commenting Complexity #
-
 * Empty xml comments are worse than no comments.
 * Use block comments that are meaningful to what is happening.  We store change data in SVN.
 * Don't preserve old code.  We store that in SVN too.
 * If a brand new hire couldn't tell what your code is doing with one read through it needs more comments, better naming, or less magic.
 
-!SLIDE 
-# Doing One Thing Well #
 
-* Type descriptions...
-* be able to easily describe any classes in english before you start
-  - put in xml comment
-* Describe a class' purpose without using "and", should be descriptive and simple to understand exactly what side effects will happen when you use it
-* additional side effects mean it doesn't one thing only
-* side effects shouldn't exist at the data service level; but at the business logic level
+!SLIDE smaller smbullets
+# Doing One Thing Well #
+* A well designed and documented class will be easy to understand and not have unexpected side effects.
+* Additional side effects mean it's doing more than one thing
+* Side effects shouldn't exist at the data service level; they may sometimes exist at the business logic level.
 * Isolation should just "happen" and testing shouldn't be "hard"
 
-!SLIDE 
-# Clean Up After Yourself #
-# We are not your mom #
 
-* Delete unused code
-* remove unneeded comments
-* remove unused files from the solution, SVN
-* always review and refactor what you have written when it's done to clean up
-  - everything can use the extra love
+!SLIDE smaller smbullets
+# Clean Up After Yourself #
+## Your mother doesn't work here to do it for you. ##
+<br /><br />
+* Delete unused code.  You can get it back from SVN if you ever need to.
+* Remove comments that don't describe funtionality.  Nobody needs to see the last 3 signatures of a method.
+* Remove unused files from the solution and SVN.  Be heartless to orphaned code.
+* When you are done with the functionality of new code, review and refactor it.  All code can use extra love.
+* If you are modifying old code spend a few minutes to clean it up before you commit.

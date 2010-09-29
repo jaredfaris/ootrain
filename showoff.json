@@ -1,6 +1,8 @@
 { 
   "name": "Dev Refresher", 
   "sections": [ 
+    { "section" : "title" },
+    { "section" : "todo" },
     { "section" : "write" },
     { "section" : "combine" },
     { "section" : "testing" },
