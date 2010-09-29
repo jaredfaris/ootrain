@@ -6,10 +6,13 @@
 !SLIDE
 # TODO #
 * Break up long sets of logic into descriptive parts
+* Mention nhibernate vs sql + sp.  Mention sql in nhibernate
+* Mention statelessness and DI
 
 
 !SLIDE 
 # Readability #
+
 
 !SLIDE code smaller
 # Naming #
@@ -30,13 +33,14 @@
     // Methods and classes are UpperCamelCase
     public void SomeMethod() {}
 
+
 !SLIDE code smaller
 # Logic that can be refactored #
     @@@csharp
     public void ProcessOrder(Order order)
     {
       double minOrderValue = Convert.ToDouble(
-        ConfigurationManager.AppSettings["MinOrderValue"]);
+          ConfigurationManager.AppSettings["MinOrderValue"]);
 
       ... 
 
@@ -50,8 +54,9 @@
       FinishProcessingOrder(order);
     }
 
+
 !SLIDE code smaller
-# Into something better #
+# Cleaner #
     @@@csharp
     public void ProcessOrder(Order order)
     {
@@ -74,6 +79,7 @@
     ...
 
 !SLIDE center smbullets
+
 # Guidelines, Not Laws #
 * Life is easier if we are all on the same page.
 * This is not a one-size-fits-all approach.
