@@ -34,7 +34,7 @@
 
 
 !SLIDE code smaller
-# Logic that can be refactored #
+# Logic That Can Be Refactored #
     @@@csharp
     public void ProcessOrder(Order order)
     {
@@ -55,7 +55,7 @@
 
 
 !SLIDE code smaller
-# Cleaner #
+# Logic Refactored #
     @@@csharp
     public void ProcessOrder(Order order)
     {
@@ -74,9 +74,7 @@
           MinOrderValue = ...
         };
     }
-
     ...
-
 !SLIDE center smbullets smaller
 
 # Guidelines, Not Laws #
@@ -128,7 +126,7 @@
 !SLIDE center smbullets smaller
 # Clever Is Not The Same As Good #
 * Clever solutions to difficult problems are good.
-* Clever code to simple problems is bad.  Readability and maintainability are more important than you saving 10 keystrokes.
+* Clever code for its own sake is bad.  Readability and maintainability are more important than you saving 10 keystrokes.
 * If you want to use new technology (and you do), SHARE IT with the team.
 
 !SLIDE code smaller 
@@ -155,37 +153,44 @@
 *Not all Perl is hideous.  In theory.
 
 !SLIDE smaller smbullets
-## Clever And Not Good ##
+# Clever And Not Good #
 * Previous values
 * result = 2
 * result2 = "50"
 
 
 !SLIDE smaller smbullets
-# Size and complexity #
+# Size And Complexity #
 
-* if doesn't fit on your screen completely, it's too long
-* if it's so complex that it needs to be tested seperatly, it should be an seperate class -- i.e. don't try to test private methods
-* high cyclomatic complexity are candiates for refactoring (too many if's)
-* if explaining the method is longer than the method, refactor to
-  - name variabling more meaningful
-  - add submethod calls that have meaningful names
-* if you have to use "and" to describe what a method of class does, split it (i.e. x and y and z) -- move into doing one thing well
+* If a method doesn't fit on your screen completely, it's too long.
+* If it's so complex that it needs to be tested seperatly, it should be an seperate class.
+* High cyclomatic complexity is a sign you should refactor. 
+* If an explanation of the method is longer than the method, refactor.
+
+!SLIDE smaller smbullets
+# Complexity Rule Of Thumb #
+
+* You should be able to describe the responsibility of a class in one sentence without a conjunction.
+* Bad:  This class is responsible for loading a user's data and displaying a user access report .
+* Good:  This class is responsible for loading a user's data.  This other class is responsible for displaying a user access report.
+
+<br />
+<br />
+<br />
+* You should be able to describe the action a method performs without a conjunction.
+* Bad:  This method verifies the user's password, and loads her profile.
+* Good:  This method verifies the user's password.  This method loads the user's profile.
 
 !SLIDE smaller smbullets
 # Commenting Complexity #
 
-* Empty xml comments are worse than no comments
-* Using naming
-* use block comments that are meaningful to what is happening - not change logs
-* we have SVN history, use it
-* Don't preserve old code
-* If anyone can't tell what's happen at first glance, needs more comments/better naming/less magic
-  - such as we hire a new person, they shouldn't be fumbling for meaning when looking at code
-* clever does not mean maintainable
+* Empty xml comments are worse than no comments.
+* Use block comments that are meaningful to what is happening.  We store change data in SVN.
+* Don't preserve old code.  We store that in SVN too.
+* If a brand new hire couldn't tell what your code is doing with one read through it needs more comments, better naming, or less magic.
 
 !SLIDE 
-# Doing one thing well #
+# Doing One Thing Well #
 
 * Type descriptions...
 * be able to easily describe any classes in english before you start
@@ -196,7 +201,7 @@
 * Isolation should just "happen" and testing shouldn't be "hard"
 
 !SLIDE 
-# Clean up after yourself #
+# Clean Up After Yourself #
 # We are not your mom #
 
 * Delete unused code
