@@ -1,13 +1,34 @@
 !SLIDE 
-# Back To Basics #
+# Dev Refresher #
 ### Examples using LINQPad ###
+
+
+!SLIDE
+# TODO #
+* Break up long sets of logic into descriptive parts
+
 
 !SLIDE 
 # Readability #
 
-* Naming - variables, methods, classes
-* Resharper is pretty much our style cop
-* Break up long sets of logic into descriptive parts
+!SLIDE code smaller
+# Naming #
+
+    @@@csharp
+    // We seem to have standardized on ReSharper's naming
+
+    // Local variables get lowerCamelCase
+    var localVariable; 
+
+    // Private instance fields are _lowerCamelCase.
+    private string _privateField; 
+
+    // Class level data members get UpperCamelCase.  
+    // Use public properties not public fields!
+    public ISomeType ClassVariable { get; set; } 
+
+    // Methods and classes are UpperCamelCase
+    public void SomeMethod() {}
 
 !SLIDE code smaller
 # Logic that can be refactored #
