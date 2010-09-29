@@ -1,3 +1,7 @@
+!SLIDE small
+# Bringing Code Parts Together #
+
+
 !SLIDE bullets
 # Separation of concerns #
 

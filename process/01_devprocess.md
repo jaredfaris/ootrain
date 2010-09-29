@@ -15,8 +15,16 @@
 # Ideally What We Do Now #
 * Get requirements
 * Turn requirements into failing unit tests
-* Write code
+* Write better code with less effort
 * Unit tests pass
 * Refactor code
 * Manually check everything and commit
 * Send code to QA
+
+
+!SLIDE smaller smbullets
+# Keys To This Process #
+* Writing better, cleaner, more readable and maintainable code 
+* Using the best tools available to us to get work done faster
+* Combining that code in a smart manner to create a better application
+* Writing unit tests to verify each individual part meets our standards 
