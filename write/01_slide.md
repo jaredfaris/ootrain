@@ -8,16 +8,44 @@
 * Naming - variables, methods, classes
 * Resharper is pretty much our style cop
 * Break up long sets of logic into descriptive parts
- -- examples
-  -- long code chains into method with reason names
-  -- etc
+
+!SLIDE code smaller
+# Logic that can be refactored #
+    @@@csharp
+    public void ProcessOrder(Order order)
+    {
+      double minOrderValue = Convert.ToDouble(ConfigurationManager.AppSettings["MinOrderValue"]);
+
+      ... 
+
+      if (order.Total < minOrderValue)
+      {
+        order.IsValid = false;
+      }
+
+      ...
+      
+      FinishProcessingOrder(order);
+    }
+
+!SLIDE code smaller
+    @@@csharp
+    public void ProcessOrder(Order order)
+    {
+      var config = LoadConfiguration();
+
+      ValidateOrder(order, config);
+      
+      if (order.IsValid)
+        FinishProcessingOrder(order, config);
+    }
+
 
 
 !SLIDE center smbullets
 # Guidelines, Not Laws #
 * Life is easier if we are all on the same page.
 * This is not a one-size-fits-all approach.
-
 
 !SLIDE center
 # Crazy LINQ Chaining Mania #
@@ -28,7 +56,6 @@ Insane in da membrain
 (Crazy insane, got no brain)
 
 <span style="font-size: .7em;">Yes it's a Cyprus Hill reference. No we aren't sorry.</span>
-
 
 !SLIDE center
 # Cleaner LINQ #
