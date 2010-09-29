@@ -1,6 +1,10 @@
-!SLIDE
+!SLIDE smaller smbullets
 # TODO #
-* Mention nhibernate and why not to use sql/SPs
-* Mention statelessness and DI
-* Mention Automappr
-* Mention Structuremap
+* nhibernate and why not to use sql/SPs
+* fluent nhibernate
+* jQuery
+* statelessness and DI
+* Automappr
+* Structuremap
+* Maybe LINQ
+* Moq
