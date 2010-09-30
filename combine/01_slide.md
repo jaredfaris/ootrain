@@ -2,22 +2,22 @@
 # Bringing Code Parts Together #
 
 
-!SLIDE bullets
-# Separation of concerns #
+!SLIDE small smbullets
+# Separation Of Concerns #
+* SOC is separating the application into distinct parts that overlap as little as possible.
+* If when describing a part of an application you say "and", it does too much.
+* Complexity normally means it's time to break things apart.
+* Side effects means something is doing multiple things. 
+* If how to test a class isn't obvious, this is probably also the case. 
 
-* Descriptions shouldn't have "and"
-* Complexity normally means it's time to break things apart
-* Side effects means break things apart
-* If testing isn't obvious, often too much is happening
+!SLIDE small smbullets
+# Spaghetti Code #
+* Spaghetti code is a symptom of lack of SOC.
+* When A calls B and B calls A and C and then C gets a headache it's time to refactor.
+* Spaghetti code almost always comes with a heap of side effects.
+* Breaking the functionality into smaller units will let you untangle it.
 
-!SLIDE bullets
-# Spaghetti code #
-
-* Side effects!
-* Testing isn't obvious
-* A sympton of lack of separation of concerns
-
-!SLIDE code
+!SLIDE code small
 # Bad Stuff #
     @@@csharp
     public void Process(Order order)
@@ -33,8 +33,8 @@
       // apply more business rules
     }
 
-!SLIDE code
-# Better stuff #
+!SLIDE code small
+# Better Stuff #
     @@@csharp
     public void Process(Order order)
     {
@@ -45,7 +45,7 @@
       _mashupService.Mash(order, stuff2);
     }
 
-!SLIDE bullets
+!SLIDE small smbullets
 # Class Types #
 
 * Last word(s) in the class name should describe it
@@ -53,21 +53,22 @@
 * Service: provides business logic functionality to entities, often with the help of other services, helpers, and/or data services
 * Extentions: provides extention methods to some type(s) of objects - i.e. StringExtentions
 
-!SLIDE bullets
+!SLIDE small smbullets
 # Class Types #
 
 * Controller: only used in the MVC framework, avoid uses elsewhere
 * Provider: factory classes
-* entities, who should not contain any real business logic, just property bags, do not need a descriptor
+* Entities: should not contain any real business logic (just property bags) and do not need a descriptor
 
-!SLIDE bullets
+!SLIDE small smbullets
 # State #
-* Only entities should contain state
-* Services, DataServices, etc are stateless, 
-they might ask for state but do not retain it
+* Only entities should contain state.
+* Services, DataServices, etc are stateless, they might ask for state but do not retain it
+* If you find yourself setting public properties on classes a lot something is wrong.
 
-!SLIDE bullets
+!SLIDE small smbullets
 # Interfaces #
-
-* Interfaces are contracts, we assume using them that we are working with black boxes
-* examples of this behavior
+* Interfaces are contracts.  
+* We assume when we use them that we are working with black boxes.  
+* We shouldn't care what they do internally.  That's their concern.
+* If we have an IGeoMapProvider the caller shouldn't care if it uses the GoogleMapProvider or the MapQuestProvider.
