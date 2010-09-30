@@ -1,12 +1,11 @@
-!SLIDE bullets
+!SLIDE bullets smaller
 # FluentNHibernate
-
 * Replaces xml configuration
 * Code is easier to read
 
+
 !SLIDE code smaller
 # HBM XML Config
-
     @@@xml
     <?xml version="1.0" encoding="utf-8" ?>  
     <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"  
@@ -29,9 +28,9 @@
       </class>  
     </hibernate-mapping>
 
+
 !SLIDE code smaller
 # FluentNHibernate Map
-
     @@@csharp
     public class CatMap : 
       ClassMap<Cat>
@@ -47,3 +46,10 @@
         HasMany(x => x.Kittens);
       }
     }
+
+!SLIDE smaller smbullets
+# NHibernate Map Tests #
+* We can write nunit integration tests for the NHibernate maps.
+* These verify (non-destructively) that our maps work with actual DB objects.
+* This is letting us catch more integration issues during testing rather than runtime.
+* We should be writing these more often.
