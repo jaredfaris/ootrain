@@ -1,7 +1,7 @@
-!SLIDE bullets smaller
+!SLIDE smbullets small
 # FluentNHibernate
-* Replaces xml configuration
-* Code is easier to read
+* We can replace xml configuration with fluent code.
+* Code is easier to read and we get some compile time checking and intellisense.
 
 
 !SLIDE code smaller

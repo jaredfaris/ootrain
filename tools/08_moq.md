@@ -1,11 +1,14 @@
-!SLIDE bullets
+!SLIDE small smbullets
 # Moq
 
-* Mocking framework for testing
-* Used for isolation
-* Needs interfaces, virtuals, or abstracts to mock
+* Moq is a mocking framework for testing.
+* We use it for isolation so we can test individual elements.
+* You can only mock interfaces, virtuals, or abstracts.
+* Good DI makes it easy to mock things.
+
 
 !SLIDE code smaller
+# A Simple Mocked Object #
     @@@csharp
     var mock = new Mock<IMagic>();
 

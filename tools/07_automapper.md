@@ -1,4 +1,4 @@
-!SLIDE bullets
+!SLIDE small smbullets
 # Automapper
 
 * Converts objects of one type to another

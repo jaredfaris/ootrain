@@ -1,4 +1,4 @@
-!SLIDE bullets smaller
+!SLIDE smbullets small
 # Why NHibernate?
 
 * Removes business logic from the DB.  Logic belongs in the code.

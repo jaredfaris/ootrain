@@ -2,31 +2,31 @@
 # Readability And Maintainability #
 
 
-!SLIDE center smbullets smaller
+!SLIDE center smbullets small
 # Guidelines, Not Laws #
 * Life is easier if we are all on the same page.
 * This is not a one-size-fits-all approach.
 
 
-!SLIDE smaller smbullets
+!SLIDE small smbullets
 # Size And Complexity #
 * If a method doesn't fit on your screen completely, it's too long.
 * If it's so complex that it needs to be tested seperatly, it should be an seperate class.
 * High cyclomatic complexity is a sign you should refactor. 
 * If an explanation of the method is longer than the method, refactor.
 
-!SLIDE smaller smbullets
+!SLIDE small smbullets
 # Complexity Rule Of Thumb #
 * You should be able to describe the responsibility of a class in one sentence without a conjunction.
-* Bad:  This class is responsible for loading a user's data and displaying a user access report .
-* Good:  This class is responsible for loading a user's data.  This other class is responsible for displaying a user access report.
+* <span style="color: red">Bad:</span>  This class is responsible for loading a user's data and displaying a user access report .
+* <span style="color: green">Good:</span>  This class is responsible for loading a user's data.
 <br /><br /><br />
 * You should be able to describe the action a method performs without a conjunction.
-* Bad:  This method verifies the user's password, and loads her profile.
-* Good:  This method verifies the user's password.  This method loads the user's profile.
+* <span style="color: red">Bad:</span>  This method verifies the user's password, and loads her profile.
+* <span style="color: green">Good:</span>  This method verifies the user's password.  This method loads the user's profile.
 
 
-!SLIDE smaller smbullets
+!SLIDE small smbullets
 # Commenting Complexity #
 * Empty xml comments are worse than no comments.
 * Use block comments that are meaningful to what is happening.  We store change data in SVN.
@@ -34,22 +34,22 @@
 * If a brand new hire couldn't tell what your code is doing with one read through it needs more comments, better naming, or less magic.
 
 
-!SLIDE smaller smbullets
+!SLIDE small smbullets
 # Doing One Thing Well #
-* A well designed and documented class will be easy to understand and not have unexpected side effects.
+* A well designed and documented class will be easy to understand and have a single goal.
 * Side effects mean it's doing more than one thing
-* Side effects shouldn't exist at the data service level; they may sometimes exist at the business logic level.
+* Side effects shouldn't exist at the data service level; they may exist at the business logic level.
 * Isolation should just "happen" and testing shouldn't be "hard"
 
 
-!SLIDE smaller smbullets
+!SLIDE small smbullets
 # Clean Up After Yourself #
 ## Your mother doesn't work here to do it for you. ##
 <br /><br />
 * Delete unused code.  You can get it back from SVN if you ever need to.
-* Remove comments that don't describe funtionality.  Nobody needs to see the last 3 signatures of a method.
+* Remove comments that don't describe funtionality.  Nobody needs to see ancient method sigs. 
 * Remove unused files from the solution and SVN.  Be heartless to orphaned code.
-* When you are done with the functionality of new code, review and refactor it.  All code can use extra love.
+* When you are done writing code, review and refactor it.  All code can use extra love.
 * If you are modifying old code spend a few minutes to clean it up before you commit.
 
 
@@ -157,7 +157,7 @@
     }
 
 
-!SLIDE center smbullets smaller
+!SLIDE center smbullets small
 # Clever Is Not The Same As Good #
 * Clever solutions to difficult problems are good.
 * Clever code for its own sake is bad.  Readability and maintainability are more important than you saving 10 keystrokes.
@@ -186,7 +186,7 @@
 *Not all Perl is hideous.  In theory.
 
 
-!SLIDE smaller smbullets
+!SLIDE small smbullets
 # Clever And Not Good #
 * Previous values
 * result = 2

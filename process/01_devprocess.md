@@ -3,7 +3,7 @@
 ### (or at least should have) ###
 
 
-!SLIDE smaller smbullets
+!SLIDE small smbullets
 # Old Way #
 * Get requirements
 * Write code
@@ -11,7 +11,7 @@
 * Send code to QA
 
 
-!SLIDE smaller smbullets
+!SLIDE small smbullets
 # Ideally What We Do Now #
 * Get requirements
 * Turn requirements into failing unit tests <span style="color: #FF0000;">(RED)</span>
@@ -22,9 +22,9 @@
 * Send code to QA
 
 
-!SLIDE smaller smbullets
+!SLIDE small smbullets
 # Keys To This Process #
 * Writing better, cleaner, more readable and maintainable code 
-* Using the best tools available to us to get work done faster
+* Using the best tools available to us to get code written faster
 * Combining that code in a smart manner to create a better application
 * Writing unit tests to verify each individual part meets our standards 
