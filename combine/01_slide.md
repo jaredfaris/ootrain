@@ -62,7 +62,7 @@
 
 !SLIDE bullets
 # State #
-* Only entities should really contain state
+* Only entities should contain state
 * Services, DataServices, etc are stateless, 
 they might ask for state but do not retain it
 
