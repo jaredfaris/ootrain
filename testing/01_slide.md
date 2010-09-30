@@ -1,21 +1,22 @@
-!SLIDE bullets 
-# Why do we test #
+!SLIDE smbullets small 
+# Why do we test? #
 
-* Promotes writing better code from the start
-* Easily catch regressions and edge case concerns
-* "Will this refactoring breaking something"
-* Increases quality of delivered product
+* Promotes writing better code and thinking about your code
+* Allows us to easily catch regressions and edge case concerns
+* Answers "Will this refactoring breaking something"
+* Increases quality of delivered product for very little investment
 
-!SLIDE bullets
+!SLIDE smbullets small
 # Testing for better code #
 
 * Testing aspects of the code, in isolation, increase confidence that the
-things will perform as expected and met the requirements. 
-* Write tests before hand matching the stated requirements 
+code will perform as expected and meet its requirements. 
+* Write tests before hand matching the stated requirements.
+* The basic testing methodology is:
 * <span style='color: red'>Red</span> &#8594;
 <span style='color: green'>Green</span> &#8594; Refactor
 
-!SLIDE smbullets
+!SLIDE smbullets small
 # Magnum.TestFramework Attributes #
 
 * `[TestFixture]` &#8594; `[Scenario]` 
@@ -30,7 +31,7 @@ things will perform as expected and met the requirements.
 
 * `[Explicit("Not Yet Implemented")]` &#8594; `[NotYetImplemented]`
 
-!SLIDE smbullets
+!SLIDE smbullets small
 # Magnum.TestFramework Assertions (Extentions) #
 
 * `ShouldBeTrue()`
@@ -39,7 +40,7 @@ things will perform as expected and met the requirements.
 * `ShouldNotBeEmpty<T>(ICollection<T>)`
 * `ShouldBeEqual<T>(T obj)`
 * etc
-* All extention methods, should be discoverable if the namespace is added
+* All extention methods, should be discoverable if the namespace is added.
 
 !SLIDE code smaller
     @@@csharp
@@ -101,54 +102,53 @@ things will perform as expected and met the requirements.
       }
     }
 
-!SLIDE bullets
+!SLIDE smbullets small
 # More Testing #
 
-* Tests that are just plain unit tests can still use NUnit attributes
-* Also, many defects can be just normal tests
-* This provides value for behaviors, used when testing is driving development
+* Tests that are just plain unit tests can still use NUnit attributes.
+* Many defects can be just normal tests.
+* This provides value for behaviors, used when testing is driving development.
 
-!SLIDE bullets
+!SLIDE smbullets small
 
-# Why TDD #
+# Why TDD? #
 
 * Forces understanding of requirements the start
-* Includes test coverage from the start
+* Assumes full test coverage
 * Reduces false positives
 * Allows easily refactoring
 * Prevents overdevelopment
 * Promotes good OO
 
-!SLIDE bullets
+!SLIDE smbullets small
 
 # Mocking & Isolation #
 
 * Isolating code for testing is easy with SOC
 * Makes refactoring easier
 * Isolation locations of business logic allows changes to happen in one place
-* Mocking allows the unit of code under test to not have to worry about other units it interacts with
+* Mocking allows the unit of code under test to not have to worry about what it interacts with 
 * Mocking simplifies and speeds up test writing
 
-!SLIDE bullets
+!SLIDE smbullets small
 # Test Types #
 
 * Integration: Testing the interaction of code vs something external (db, external web services, etc)
 * NHibernate map tests are a type of integration test
 * Unit: Tests a single unit of code (a single method in a class)
 
-!SLIDE bullets
-# How I learned to quit worrying and love CI #
+!SLIDE smbullets small
+## How I Learned To Quit Worrying And Love CI ##
 
-* We should be running full test suites localy
-* CI ensures code is always building
-* Forces us to not leave code in a broken state, which can hamper others work
-* Better than waiting until someone does a build/release before QA or production release
-* public humliation encouages faster repair from a broken state
+* We should be running full test suites locally.
+* CI ensures our code is always building.
+* It forces us to not leave code in a broken state, which can hamper other devs
+* It's better than waiting until someone does a build/release before a QA or production release
+* Public humliation encouages faster repair from a broken state!
 
-!SLIDE bullets
+!SLIDE smbullets small
 # Code Coverage #
-
-* CI provides coverage reports
-* Can use dotCover locally
-* If your tests are overlooking code, it's possible you haven't throught through all the conditions
-* A good overall goal is on the order of 80% coverage - not all code needs it but all business logic should have it
+* We generate code coverage reports in our CI process.  Look at them.
+* You can also run dotCover locally while you write your code.
+* If your tests are overlooking code, it's possible you haven't throught through all the complications.
+* A good overall goal is 80%+ coverage - not all code needs it but all business logic should have it.
