@@ -72,3 +72,52 @@
 * We assume when we use them that we are working with black boxes.  
 * We shouldn't care what they do internally.  That's their concern.
 * If we have an IGeoMapProvider the caller shouldn't care if it uses the GoogleMapProvider or the MapQuestProvider.
+
+!SLIDE small smbullets
+# Control Statements
+
+* `else` can be avoided, avoid it
+* `finally` should be replaced with `using`
+* `try` ... `catch` is not a control statement
+
+!SLIDE smaller code
+# `else` doesn't provide value
+
+    @@@csharp
+    if (foo == string.Empty)
+    {
+      return magicValue;
+    }
+    else
+    {
+      return foo;
+    }
+
+# better
+    @@@csharp
+    if (foo == string.Empty)
+    {
+      return magicValue;
+    }
+    return foo;
+
+!SLIDE smaller code
+
+    @@@csharp
+    if (theDate == DateTime.MinValue)
+    {
+      foo = string.Empty;
+    }
+    else
+    {
+      foo = theDate.ToString();
+    }
+
+# simplify!
+
+    @@@csharp
+    foo = string.Empty;
+    if (theDate != DateTime.MinValue)
+    {
+      foo = theDate.ToString();
+    }
