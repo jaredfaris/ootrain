@@ -74,7 +74,7 @@ code will perform as expected and meet its requirements.
     }
 
 !SLIDE small
-# Add a new requirement to the statement #
+# Add A New Requirement To The Statement #
 
 !SLIDE code smaller
     @@@csharp
@@ -151,4 +151,4 @@ code will perform as expected and meet its requirements.
 * We generate code coverage reports in our CI process.  Look at them.
 * You can also run dotCover locally while you write your code.
 * If your tests are overlooking code, it's possible you haven't throught through all the complications.
-* A good overall goal is 80%+ coverage - not all code needs it but all business logic should have it.
+* A good goal is 80%+ coverage - not all code needs it but all business logic should have it.
