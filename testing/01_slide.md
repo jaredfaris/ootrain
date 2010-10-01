@@ -73,7 +73,7 @@ code will perform as expected and meet its requirements.
       }
     }
 
-!SLIDE
+!SLIDE small
 # Add a new requirement to the statement #
 
 !SLIDE code smaller
