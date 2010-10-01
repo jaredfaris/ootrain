@@ -81,7 +81,7 @@
 * `try` ... `catch` is not a control statement
 
 !SLIDE smaller code
-# `else` doesn't provide value
+# '`else`' Doesn't Provide Value
 
     @@@csharp
     if (foo == string.Empty)
@@ -93,7 +93,7 @@
       return foo;
     }
 
-# better
+# Better
     @@@csharp
     if (foo == string.Empty)
     {
@@ -113,7 +113,7 @@
       foo = theDate.ToString();
     }
 
-# simplify!
+# Simplify!
 
     @@@csharp
     foo = string.Empty;

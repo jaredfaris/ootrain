@@ -4,8 +4,7 @@
 
 !SLIDE center smbullets small
 # Guidelines, Not Laws #
-* Life is easier if we are all on the same page.
-* This is not a one-size-fits-all approach.
+* Life is easier if we are all on the same page but there are always exceptions.
 
 
 !SLIDE small smbullets
