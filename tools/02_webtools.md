@@ -28,13 +28,15 @@
 # jQuery noConflict() #
     @@@javascript
     <script type="text/javascript">
-      // This tells jQuery not to use the $ syntax in case Protype is using it 
+      // This tells jQuery not to use the $ syntax in case Protype 
+      // is using it 
       jQuery.noConflict();
 
       jQuery(document).ready(function() {
 
         // Use jQuery. instead of $. in no conflict mode.
-        // When in doubt do it this way to avoid compatibility issues. 
+        // When in doubt do it this way to avoid compatibility 
+        // issues. 
         jQuery("input#someId").slideToggle();
 
       });
@@ -46,8 +48,9 @@
 <span style="font-size: 2em;">Script</span>
     @@@javascript
     <script type="text/javascript">
-      // The live() method binds this event to anything matching the selector
-      // now or in the future.  Great if things will be added dynamically.
+      // The live() method binds this event to anything matching the 
+      // selector now or in the future.  Great if things will be 
+      // added dynamically.
       $('form#myForm').live('submit', 
         function() {
           var myValue = $('form#myForm input#text1').val();

@@ -191,5 +191,3 @@
 * Previous values
 * result = 2
 * result2 = "50"
-
-

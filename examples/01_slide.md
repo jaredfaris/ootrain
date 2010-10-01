@@ -1,4 +1,4 @@
-!SLIDE 
+!SLIDE small smbullets
 # Examples #
 
 * Testing - Hard to debug
