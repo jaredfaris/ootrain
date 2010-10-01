@@ -53,3 +53,33 @@
 * These verify (non-destructively) that our maps work with actual DB objects.
 * This is letting us catch more integration issues during testing rather than runtime.
 * We should be writing these more often.
+
+!SLIDE code smaller
+
+    @@@csharp
+    public class Employee
+    {
+      public virtual int Id { get; private set; }
+      public virtual string FirstName { get; set; }
+      public virtual string LastName { get; set; }
+    }
+ 
+    public class EmployeeMap : ClassMap<Employee>
+    {
+        public EmployeeMap()
+        {
+            Id(x => x.Id);
+            Map(x => x.FirstName);
+            Map(x => x.LastName);
+        }
+    }
+
+    [Test]
+    public void CanCorrectlyMapEmployee()
+    {
+        new PersistenceSpecification<Employee>(session)
+            .CheckProperty(c => c.Id, 1)
+            .CheckProperty(c => c.FirstName, "John")
+            .CheckProperty(c => c.LastName, "Doe")
+            .VerifyTheMappings();
+    }
