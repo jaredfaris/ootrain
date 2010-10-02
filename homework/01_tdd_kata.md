@@ -70,10 +70,23 @@
 
 !SLIDE smbullets small
 # New Requirement:
-* New method `TranslateNumber` which takes an `ITranslator` engine and returns the given number as a string.
-* Don't worry about how `ITranslator` works since it's a dependancy.  Mock it.
-* `TranslateNumber_TakesNumberAndTranslator_ReturnsString`
-* Copy this ITranslator code:
+* Add an overload to `Add` that takes an `IPrinter` and in the method calls the `Print()` method.
+* Don't worry about how `IPrinter` works since it's a dependancy.  Mock it.  Verify it is called.
+* `Add_TakesNumbersAndIPrinter_CallsPrint`
+
+
+!SLIDE smaller code
+    @@@csharp
+    public interface IPrinter
+    {
+      void Print(int number);
+    }
+
+
+!SLIDE smbullets small
+# Check Coverage!
+* DotCover should show 100%.
+
 
 !SLIDE smbullets small
 # Add The TDD Kata To Your Routine
