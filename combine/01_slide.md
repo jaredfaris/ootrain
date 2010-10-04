@@ -79,12 +79,12 @@
 
     interface IGeoMapProvider
     {
-      MapObject GetMapForCoordinates(double lat, double long);
+      MapObject GetMap(double lat, double long);
     }
 
     public class GoogleMapProvider : IGeoMapProvider
     {
-      MapObject GetMapForCoordinates(double lat, double long)
+      public MapObject GetMap(double lat, double long)
       {
         ...
         return googleMapObject;
@@ -94,7 +94,7 @@
     
     public class MapQuestMapProvider : IGeoMapProvider
     {
-      MapObject GetMapForCoordinates(double lat, double long)
+      public MapObject GetMap(double lat, double long)
       {
         ...
         return mapQuestMapObject;
