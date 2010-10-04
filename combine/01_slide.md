@@ -79,25 +79,27 @@
 
     interface IMyInterface: IBase1, IBase2
     {
-       void MethodA();
-       void MethodB();
+       string MethodA();
     }
 
     public class ClassA : IMyInterface
     {
-      void MethodA()
+      public string MethodA()
       {
-          // Does something one way
+        ...
+        return someString;
       }
     }
     
     public class ClassB : IMyInterface
     {
-      void MethodA()
+      public string MethodA()
       {
-          // Does something one way
+        ...
+        return someOtherString;
       }
     }
+    
 
 
 !SLIDE small smbullets
