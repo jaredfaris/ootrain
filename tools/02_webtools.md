@@ -78,6 +78,23 @@
 * Refactor to avoid spaghetti code.
 
 
+!SLIDE smaller code
+# JSON
+    @@@json
+    {"menu": {
+      "id": "file",
+      "value": "File",
+      "popup": {
+        "menuitem": [
+          {"value": "New", "onclick": "CreateNewDoc()"},
+          {"value": "Open", "onclick": "OpenDoc()"},
+          {"value": "Close", "onclick": "CloseDoc()"}
+        ]
+      }
+    }}
+
+
+
 !SLIDE small smbullets
 # Flex
 * ActionScript 3 is a lot like Javascript.
