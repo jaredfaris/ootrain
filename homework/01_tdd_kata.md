@@ -35,7 +35,6 @@
 * `Add_TakesNumbersWithCommaOrNewline_ReturnsSum()`
 
 * Ex: "1\n2,3" okay
-* Ex: "1,\n" not okay (don't test for an explicit failure)
 
 
 !SLIDE smbullets small
