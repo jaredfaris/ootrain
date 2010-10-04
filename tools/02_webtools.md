@@ -69,3 +69,35 @@
     </form>
 
 <span style="font-size: 2em;">Note:  IDs are unique.  This is important.</span>
+
+
+!SLIDE small smbullets
+# A Note About Javascript
+* Javascript is a first class citizen.
+* Separate structure from behavior.
+* Refactor to avoid spaghetti code.
+
+
+!SLIDE small smbullets
+# Flex
+* ActionScript 3 is a lot like Javascript.
+* Event-driven development is a little different.
+
+
+!SLIDE smaller code
+    @@@flex
+    <mx:Script>
+      import mx.controls.Alert;
+
+      public function addEvent():void{
+          b1.addEventListener(MouseEvent.CLICK, showAlert, false, 0); 
+      }
+
+      public function showAlert(event:Event):void{
+        Alert.show('Mouse click');
+      }
+    
+    </mx:Script>
+
+
+    <mx:Button id = 'b1' label = 'b1 button'/>
