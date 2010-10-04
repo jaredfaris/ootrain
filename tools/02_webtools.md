@@ -17,12 +17,14 @@
 * If done right this will make supporting new devices (like tablets) much easier too.
 * MVC supports Master Pages.  We should be using them for all navigation and layout.
 
+
 !SLIDE small smbullets
 # jQuery #
 * Prototype and MSAjax are being phased out and replaced by jQuery.
 * Makes doing JavaScript easy.  Tons of build in DOM manipulations.
 * When adding jQuery to old pages with another library use noConflict().
 * Anything we were doing with Infragistics we should probably use jQuery for going forward.
+
 
 !SLIDE smaller code
 # jQuery noConflict() #
@@ -41,6 +43,7 @@
 
       });
     </script>
+
 
 !SLIDE smaller code
 # jQuery Example #
@@ -66,3 +69,16 @@
     </form>
 
 <span style="font-size: 2em;">Sidenote:  IDs are unique.  This is important.  Quit having more than one element with an<br/>ID on the same page.</span>
+
+
+!SLIDE small smbullets
+# A Note About Javascript
+* Javascript is a first class citizen.
+* Separate structure from behavior.
+* Refactor to avoid spaghetti code.
+
+
+!SLIDE small smbullets
+# Flex
+* ActionScript 3 is a lot like Javascript.
+* Event-driven development is a little different.
