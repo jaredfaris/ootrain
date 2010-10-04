@@ -10,7 +10,7 @@
 !SLIDE small smbullets
 # Size And Complexity #
 * If a method doesn't fit on your screen completely, it's too long.
-* If it's so complex that it needs to be tested seperatly, it should be an seperate class.
+* If it's so complex that it needs to be tested separatly, it should be an separate class.
 * High cyclomatic complexity is a sign you should refactor. 
 * If an explanation of the method is longer than the method, refactor.
 
