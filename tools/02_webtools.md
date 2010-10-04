@@ -7,7 +7,7 @@
 * We should't reproduce page elements.  We should reuse templates/controls.
 * Any pages not using masters should be, we just may need to tweak some javascript.
 * These save a ton of time when maintaining/modifying look & feel.
-* They also promote good SOC.  The page only does its concerns now.
+* They also promote good SOC.  The page only handles its own concerns now.
 
 
 !SLIDE small smbullets
