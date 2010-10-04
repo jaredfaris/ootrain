@@ -73,6 +73,33 @@
 * We shouldn't care what they do internally.  That's their concern.
 * If we have an IGeoMapProvider the caller shouldn't care if it uses the GoogleMapProvider or the MapQuestProvider.
 
+
+!SLIDE smaller code
+    @@@csharp
+
+    interface IMyInterface: IBase1, IBase2
+    {
+       void MethodA();
+       void MethodB();
+    }
+
+    public class ClassA : IMyInterface
+    {
+      void MethodA()
+      {
+          // Does something one way
+      }
+    }
+    
+    public class ClassB : IMyInterface
+    {
+      void MethodA()
+      {
+          // Does something one way
+      }
+    }
+
+
 !SLIDE small smbullets
 # Control Statements
 
