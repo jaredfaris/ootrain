@@ -23,4 +23,4 @@
 
     // Verify that the given method was indeed called 
     // with the expected value
-    mock.Verify(framework => framework.HasHatRabbit());
+    mock.Verify(framework => framework.HatHasRabbit());
