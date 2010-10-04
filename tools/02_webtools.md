@@ -65,4 +65,4 @@
       <input type="text" id="text1" />
     </form>
 
-<span style="font-size: 2em;">Sidenote:  IDs are unique.  This is important.  Quit having more than one element with an<br/>ID on the same page.</span>
+<span style="font-size: 2em;">Note:  IDs are unique.  This is important.</span>
