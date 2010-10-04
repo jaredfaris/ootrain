@@ -77,29 +77,29 @@
 !SLIDE smaller code
     @@@csharp
 
-    interface IMyInterface: IBase1, IBase2
+    interface IGeoMapProvider
     {
-       string MethodA();
+      MapObject GetMapForCoordinates(double lat, double long);
     }
 
-    public class ClassA : IMyInterface
+    public class GoogleMapProvider : IGeoMapProvider
     {
-      public string MethodA()
+      MapObject GetMapForCoordinates(double lat, double long)
       {
         ...
-        return someString;
+        return googleMapObject;
       }
     }
     
-    public class ClassB : IMyInterface
+    
+    public class MapQuestMapProvider : IGeoMapProvider
     {
-      public string MethodA()
+      MapObject GetMapForCoordinates(double lat, double long)
       {
         ...
-        return someOtherString;
+        return mapQuestMapObject;
       }
     }
-    
 
 
 !SLIDE small smbullets
