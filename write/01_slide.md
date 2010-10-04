@@ -70,6 +70,9 @@
     // Methods and classes are UpperCamelCase
     public void SomeMethod() {}
 
+    // Acronyms are UpperCamelCase as well
+    public void DoTheXmlThing() {}
+
 
 !SLIDE code smaller
 # Logic That Can Be Refactored #
