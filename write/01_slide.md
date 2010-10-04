@@ -197,3 +197,4 @@
 * Previous values
 * result = 2
 * result2 = "50"
+* Sparing use of the null-coalescing operator (`??`) and conditional operator (`?:`) are acceptable, just keep it simple
