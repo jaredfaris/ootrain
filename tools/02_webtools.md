@@ -22,7 +22,7 @@
 * Prototype and MSAjax are being phased out and replaced by jQuery.
 * Makes doing JavaScript easy.  Tons of build in DOM manipulations.
 * When adding jQuery to old pages with another library use noConflict().
-* Anything we were doing with Infragistics we should probably use jQuery for going forward.
+* Consider replacing heavy server side controls with client side fancy jQuery.
 
 !SLIDE smaller code
 # jQuery noConflict() #
