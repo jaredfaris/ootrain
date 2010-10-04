@@ -108,7 +108,7 @@
         FinishProcessingOrder(order, config);
     }
 
-    private void LoadConfiguration()
+    private OrderProcessingConfig LoadConfiguration()
     {
       return new OrderProcessingConfig
         {
