@@ -2,6 +2,7 @@
 # FluentNHibernate
 * We can replace xml configuration with fluent code.
 * Code is easier to read and we get some compile time checking and intellisense.
+* A couple things FNH cannot do, fall back on xml if you have to
 
 
 !SLIDE code smaller
@@ -83,3 +84,25 @@
             .CheckProperty(c => c.LastName, "Doe")
             .VerifyTheMappings();
     }
+
+!SLIDE small code
+# NH and stored procs #
+
+    @@@xml
+    <?xml version="1.0" encoding="utf-8" ?>
+    <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+        auto-import="true" namespace="Example" 
+        assembly="Example">
+      <class name="Example.Documents" table="documents" 
+             lazy="false">
+        <id name="id" access="field">
+          <generator class="native" />
+        </id>
+        <property name="name" column="name" type="String"/>
+        <property name="date" column="date" type="date"/>
+        <property name="author" column="author" 
+                  type="String"/>
+        <property name="doclink" column="doclink" 
+                  type="String"/>
+      </class>
+    </hibernate-mapping>

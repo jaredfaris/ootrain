@@ -70,6 +70,9 @@
     // Methods and classes are UpperCamelCase
     public void SomeMethod() {}
 
+    // Acronyms are UpperCamelCase as well
+    public void DoTheXmlThing() {}
+
 
 !SLIDE code smaller
 # Logic That Can Be Refactored #
@@ -105,7 +108,7 @@
         FinishProcessingOrder(order, config);
     }
 
-    private void LoadConfiguration()
+    private OrderProcessingConfig LoadConfiguration()
     {
       return new OrderProcessingConfig
         {
@@ -125,10 +128,12 @@
       // This isn't easily readable.  It contains some weird logic 
       // which may not make sense even in context. 
       //Oh and look, magic strings and magic numbers. Joy
-      var output = cart.Items.Where(x => x.UnitPrice > 2.00m && x.Name != "Stuff" 
-        && x.UnitPrice < 99m).OrderByDescending(x => x.Id).Take(3)
+      var output = cart.Items.Where(x => x.UnitPrice > 2.00m 
+        && x.Name != "Stuff" && x.UnitPrice < 99m)
+        .OrderByDescending(x => x.Id).Take(3)
         .Select(x => x.UnitPrice);
     }
+
 <div style="text-align: center; font-size: 1.4em;">
   Insane in da membrain
   (Crazy insane, got no brain)
@@ -140,16 +145,18 @@
     @@@csharp
     void Main()
     {
-      LoadConfiguredValues(); // Don't embed values.  No recompiles!
+      // Don't embed values.  No recompiles!
+      var config = LoadConfiguredValues(); 
       
       var cart = CreateTestCart();
       
       // It's pretty obvious what each distinct unit of this chain
       // is doing. We can even easily comment anything that's tricky
       var output = cart.Items
-        .Where(x => x.UnitPrice > lowerLimit) 
-        .Where(x => x.UnitPrice < upperLimit) 
-        .Where(x => x.Name != bannedName) // No more magic strings!
+        .Where(x => x.UnitPrice > config.lowerLimit) 
+        .Where(x => x.UnitPrice < config.upperLimit) 
+                              // No more magic strings!
+        .Where(x => x.Name != config.bannedName) 
         .OrderByDescending(y => y.Id)
         .Take(3) // Limit for some business reason?  Maybe explain
         .Select(z => z.UnitPrice);
@@ -190,3 +197,4 @@
 * Previous values
 * result = 2
 * result2 = "50"
+* Sparing use of the null-coalescing operator (`??`) and conditional operator (`?:`) are acceptable, just keep it simple

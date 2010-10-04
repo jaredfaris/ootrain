@@ -23,7 +23,7 @@
 * Prototype and MSAjax are being phased out and replaced by jQuery.
 * Makes doing JavaScript easy.  Tons of build in DOM manipulations.
 * When adding jQuery to old pages with another library use noConflict().
-* Anything we were doing with Infragistics we should probably use jQuery for going forward.
+* Consider replacing heavy server side controls with client side fancy jQuery.
 
 
 !SLIDE smaller code
@@ -68,17 +68,4 @@
       <input type="text" id="text1" />
     </form>
 
-<span style="font-size: 2em;">Sidenote:  IDs are unique.  This is important.  Quit having more than one element with an<br/>ID on the same page.</span>
-
-
-!SLIDE small smbullets
-# A Note About Javascript
-* Javascript is a first class citizen.
-* Separate structure from behavior.
-* Refactor to avoid spaghetti code.
-
-
-!SLIDE small smbullets
-# Flex
-* ActionScript 3 is a lot like Javascript.
-* Event-driven development is a little different.
+<span style="font-size: 2em;">Note:  IDs are unique.  This is important.</span>
