@@ -4,8 +4,8 @@
 !SLIDE small smbullets
 # Master Pages And Controls #
 * New products are all using master pages.  Old products are getting this added.
-* We should't reproduce page elements.  We should reuse templates/controls.
-* Any pages not using masters should be, we just may need to tweak some javascript.
+* We shouldn't reproduce page elements.  We should reuse templates/controls.
+* Any pages not using masters should be, we just may need to tweak some JavaScript.
 * These save a ton of time when maintaining/modifying look & feel.
 * They also promote good SOC.  The page only does its concerns now.
 
@@ -13,7 +13,7 @@
 !SLIDE small smbullets
 # MVC #
 * Our new products are all using MVC and it will probably get used for new dev in old products.
-* Encourages good seperation of concerns between display and logic.
+* Encourages good separation of concerns between display and logic.
 * If done right this will make supporting new devices (like tablets) much easier too.
 * MVC supports Master Pages.  We should be using them for all navigation and layout.
 
@@ -30,7 +30,7 @@
 # jQuery noConflict() #
     @@@javascript
     <script type="text/javascript">
-      // This tells jQuery not to use the $ syntax in case Protype 
+      // This tells jQuery not to use the $ syntax in case Prototype 
       // is using it 
       jQuery.noConflict();
 
@@ -72,8 +72,8 @@
 
 
 !SLIDE small smbullets
-# A Note About Javascript
-* Javascript is a first class citizen.
+# A Note About JavaScript
+* JavaScript is a first class citizen.
 * Separate structure from behavior.
 * Refactor to avoid spaghetti code.
 
@@ -97,7 +97,7 @@
 
 !SLIDE small smbullets
 # Flex
-* ActionScript 3 is a lot like Javascript.
+* ActionScript 3 is a lot like JavaScript.
 * Event-driven development is a little different.
 
 

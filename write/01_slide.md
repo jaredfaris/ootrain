@@ -10,7 +10,7 @@
 !SLIDE small smbullets
 # Size And Complexity #
 * If a method doesn't fit on your screen completely, it's too long.
-* If it's so complex that it needs to be tested separatly, it should be an separate class.
+* If it's so complex that it needs to be tested separately, it should be an separate class.
 * High cyclomatic complexity is a sign you should refactor. 
 * If an explanation of the method is longer than the method, refactor.
 
@@ -46,7 +46,7 @@
 ## Your mother doesn't work here to do it for you. ##
 <br /><br />
 * Delete unused code.  You can get it back from SVN if you ever need to.
-* Remove comments that don't describe funtionality.  Nobody needs to see ancient method sigs. 
+* Remove comments that don't describe functionality.  Nobody needs to see ancient method sigs. 
 * Remove unused files from the solution and SVN.  Be heartless to orphaned code.
 * When you are done writing code, review and refactor it.  All code can use extra love.
 * If you are modifying old code spend a few minutes to clean it up before you commit.

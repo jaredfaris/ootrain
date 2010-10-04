@@ -3,7 +3,7 @@
 
 * Converts objects of one type to another
 * Easy to use: `Mapper.Map<TFrom, TTo>(TFrom source)`
-* Will try to automap properties that match names
+* Will try to automatically map properties that match names
 * Easy to add own mappings
 
 !SLIDE code smaller

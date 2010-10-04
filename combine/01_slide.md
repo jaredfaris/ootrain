@@ -49,9 +49,9 @@
 # Class Types #
 
 * Last word(s) in the class name should describe it
-* DataService: accesses data, often the db, VisitDataService, Dao isn't as descrive
+* DataService: accesses data, often the db, VisitDataService, Dao isn't as descriptive
 * Service: provides business logic functionality to entities, often with the help of other services, helpers, and/or data services
-* Extentions: provides extention methods to some type(s) of objects - i.e. StringExtentions
+* Extensions: provides extension methods to some type(s) of objects - i.e. StringExtensions
 
 !SLIDE small smbullets
 # Class Types #

@@ -40,7 +40,7 @@ code will perform as expected and meet its requirements.
 * `ShouldNotBeEmpty<T>(ICollection<T>)`
 * `ShouldBeEqual<T>(T obj)`
 * etc
-* All extention methods, should be discoverable if the namespace is added.
+* All extension methods, should be discoverable if the namespace is added.
 
 !SLIDE code smaller
     @@@csharp
@@ -117,7 +117,7 @@ code will perform as expected and meet its requirements.
 * Assumes full test coverage
 * Reduces false positives
 * Allows easily refactoring
-* Prevents overdevelopment
+* Prevents over-development
 * Promotes good OO
 
 !SLIDE smbullets small
@@ -144,11 +144,11 @@ code will perform as expected and meet its requirements.
 * CI ensures our code is always building.
 * It forces us to not leave code in a broken state, which can hamper other devs
 * It's better than waiting until someone does a build/release before a QA or production release
-* Public humliation encouages faster repair from a broken state!
+* Public humiliation encourages faster repair from a broken state!
 
 !SLIDE smbullets small
 # Code Coverage #
 * We generate code coverage reports in our CI process.  Look at them.
 * You can also run dotCover locally while you write your code.
-* If your tests are overlooking code, it's possible you haven't throught through all the complications.
+* If your tests are overlooking code, it's possible you haven't thought through all the complications.
 * A good goal is 80%+ coverage - not all code needs it but all business logic should have it.

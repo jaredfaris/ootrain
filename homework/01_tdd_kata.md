@@ -70,7 +70,7 @@
 !SLIDE smbullets small
 # New Requirement:
 * Add an overload to `Add` that takes an `IPrinter` and in the method calls the `Print()` method.
-* Don't worry about how `IPrinter` works since it's a dependancy.  Mock it.  Verify it is called.
+* Don't worry about how `IPrinter` works since it's a dependency.  Mock it.  Verify it is called.
 * `Add_TakesNumbersAndIPrinter_CallsPrint`
 
 
