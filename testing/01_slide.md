@@ -97,7 +97,7 @@ code will perform as expected and meet its requirements.
       [Then]
       public void Should_have_message()
       {
-        Order.ValidMessages
+        Order.ValidationMessages
           .ShouldContain("Order Date is in the future.");
       }
     }
