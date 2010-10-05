@@ -15,7 +15,7 @@
 * `Add` will return the sum of input numbers 
 * Start with `string.Empty` test case, then 1 number, then 2
 * String.Empty == 0
-* "1" == 1
+* Ex: "1" == 1
 * "1,2" == 3
 
 !SLIDE small smbullets
@@ -51,21 +51,11 @@
 
 !SLIDE smbullets small
 # New Requirement:
-* `Add` should throw an exception if a negative number is input
-* `Add_TakesNegativeNumbers_ThrowsException()`
-* Exception message: Negatives not allowed
-* List all negatives in the exception
-
-* Ex: "1\n2,-3,-4" should return an exception with a message "negatives not allowed: -3, -4" 
-
-
-!SLIDE smbullets small
-# New Requirement:
 * `Add` should ignore input values greater than 1000
 * `Add_TakesNumberOver1000_IgnoresNumber()`
 
 * Ex: "1001,2" = 2
-* Ex: "999,2" = 1001
+* Ex: "1000,2" = 1002
 * Ex: "1001,1002" = 0
 
 
