@@ -107,7 +107,7 @@
       import mx.controls.Alert;
 
       public function addEvent():void{
-          b1.addEventListener(MouseEvent.CLICK, showAlert, false, 0); 
+        b1.addEventListener(MouseEvent.CLICK, showAlert, false, 0); 
       }
 
       public function showAlert(event:Event):void{
