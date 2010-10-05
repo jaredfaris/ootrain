@@ -77,7 +77,7 @@
 !SLIDE smaller code
     @@@csharp
 
-    interface IGeoMapProvider
+    public interface IGeoMapProvider
     {
       MapObject GetMap(double lat, double long);
     }
