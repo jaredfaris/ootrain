@@ -14,7 +14,9 @@
 * `Add` will accept a blank string or a string containing up to 2 numbers separated by commas
 * `Add` will return the sum of input numbers 
 * Start with `string.Empty` test case, then 1 number, then 2
-
+* String.Empty == 0
+* "1" == 1
+* "1,2" == 3
 
 !SLIDE small smbullets
 # First tests:
