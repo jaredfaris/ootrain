@@ -3,7 +3,7 @@
 
 * Promotes writing better code and thinking about your code
 * Allows us to easily catch regressions and edge case concerns
-* Answers "Will this refactoring breaking something"
+* Answers "Will this refactoring break something"
 * Increases quality of delivered product for very little investment
 
 !SLIDE smbullets small
